@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".QuestionDetailActivity">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10px"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="300px"
+            android:layout_height="150px"
+            android:text="お気に入り"
+            android:layout_marginTop="60px"
+            android:id="@+id/favoriteTextView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+        <ImageView
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:clickable="false"
+            android:id="@+id/favoriteImageView"
+            android:layout_margin="2dp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300px"
+        android:id="@+id/listView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/plus" />
+</RelativeLayout>

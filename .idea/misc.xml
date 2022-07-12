@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/drawable/custom_button.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/activity_answer_send.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/activity_question_detail.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/activity_question_send.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/activity_setting.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/fragment_first.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/fragment_second.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/list_answer.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/list_question_detail.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/list_questions.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/layout/question_detail_activity.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
+        <entry key="..\:/Users/NAITO/AndroidStudioProjects/QA_App/app/src/main/res/menu/menu_main.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
