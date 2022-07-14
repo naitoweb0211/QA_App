@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private var mGenreRef: DatabaseReference? = null
     private var snapshotListener: ListenerRegistration? = null
+    val user = FirebaseAuth.getInstance().currentUser
 
     private val mEventListener = object : ChildEventListener {
         override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
@@ -218,18 +219,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else if (id == R.id.nav_compter) {
             toolbar.title = getString(R.string.menu_compter_label)
             mGenre = 4
-        } else if(id == R.id.nav_favorite_hobby) {
-            toolbar.title = getString(R.string.menu_favorite_hobby_label)
+        } else if(id == R.id.nav_favorite) {
+            toolbar.title = getString(R.string.menu_favorite_label)
             mGenre = 5
-        } else if(id == R.id.nav_favorite_life) {
-            toolbar.title = getString(R.string.menu_favorite_life_label)
-            mGenre = 6
-        } else if(id == R.id.nav_favorite_health) {
-            toolbar.title = getString(R.string.menu_favorite_health_label)
-            mGenre = 7
-        } else if(id == R.id.nav_favorite_computer) {
-            toolbar.title = getString(R.string.menu_favorite_computer_label)
-            mGenre = 8
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         // --- ここから ---
@@ -245,19 +237,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             mGenreRef = mDatabaseReference.child(ContentsPATH).child(mGenre.toString())
             mGenreRef!!.addChildEventListener(mEventListener)
         }else if(mGenre == 5){
-            mGenreRef = mDatabaseReference.child(FavoritePATH).child("1")
-            Log.d("パス", "パス")
-            mGenreRef!!.addChildEventListener(mEventListener)
-        }else if(mGenre == 6){
-            mGenreRef = mDatabaseReference.child(FavoritePATH).child("2")
-            Log.d("パス", "パス")
-            mGenreRef!!.addChildEventListener(mEventListener)
-        }else if(mGenre == 7){
-            mGenreRef = mDatabaseReference.child(FavoritePATH).child("3")
-            Log.d("パス", "パス")
-            mGenreRef!!.addChildEventListener(mEventListener)
-        }else if(mGenre == 8){
-            mGenreRef = mDatabaseReference.child(FavoritePATH).child("4")
+            mGenreRef = mDatabaseReference.child(FavoritePATH).child(user!!.uid.toString())
             Log.d("パス", "パス")
             mGenreRef!!.addChildEventListener(mEventListener)
         }

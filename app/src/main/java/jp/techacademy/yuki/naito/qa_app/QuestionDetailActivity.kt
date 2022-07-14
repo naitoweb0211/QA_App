@@ -25,6 +25,7 @@ class QuestionDetailActivity : AppCompatActivity(), View.OnClickListener, Databa
     private var mGenre: Int = 5
     var favorite = ""
     var questionUid = ""
+    val user = FirebaseAuth.getInstance().currentUser
     private val mEventListener = object : ChildEventListener {
         override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
             val map = dataSnapshot.value as Map<*, *>
@@ -142,8 +143,8 @@ class QuestionDetailActivity : AppCompatActivity(), View.OnClickListener, Databa
                 favoriteReference.setValue("お気に入り")
                 dataBaseReference = FirebaseDatabase.getInstance().reference
                 favoriteReference =
-                    dataBaseReference.child(FavoritePATH).child(mQuestion.genre.toString())
-                        .child(mQuestion.questionUid)
+                    dataBaseReference.child(FavoritePATH).child(user!!.uid.toString()).child(mQuestion.questionUid)
+
                 Log.d("パス", favoriteReference.toString())
                 val data = HashMap<String, String>()
                 data["uid"] = mQuestion.uid
@@ -175,8 +176,7 @@ class QuestionDetailActivity : AppCompatActivity(), View.OnClickListener, Databa
                 favoriteReference.setValue("")
                 dataBaseReference = FirebaseDatabase.getInstance().reference
                 favoriteReference =
-                    dataBaseReference.child(FavoritePATH).child(mQuestion.genre.toString())
-                        .child(mQuestion.questionUid)
+                    dataBaseReference.child(FavoritePATH).child(user!!.uid.toString()).child(mQuestion.questionUid)
                 favoriteReference.removeValue()
             }
     /*        progressBar.visibility = View.VISIBLE*/
