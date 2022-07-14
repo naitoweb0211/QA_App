@@ -11,6 +11,7 @@ const val AnswersPATH = "answers"
 
 // Firebaseに回答を保存するパス
 const val FavoritePATH = "favorite"
+const val QuestionUidPATH = "questionUid"
 
 // Preferenceに表示名を保存する時のキー
 const val NameKEY = "name"

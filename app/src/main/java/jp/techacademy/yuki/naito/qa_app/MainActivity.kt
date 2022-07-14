@@ -157,17 +157,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // Firebase
         mDatabaseReference = FirebaseDatabase.getInstance().reference
-
+        val previous = intent.getStringExtra("previous")
+        Log.d("previous", previous.toString())
         // ListViewの準備
         mAdapter = QuestionsListAdapter(this)
         mQuestionArrayList = ArrayList<Question>()
         mAdapter.notifyDataSetChanged()
         listView.setOnItemClickListener{parent, view, position, id ->
-            // Questionのインスタンスを渡して質問詳細画面を起動する
-            val intent = Intent(applicationContext, QuestionDetailActivity::class.java)
-            intent.putExtra("question", mQuestionArrayList[position])
-            startActivity(intent)
-        }
+              // Questionのインスタンスを渡して質問詳細画面を起動する
+              val intent = Intent(applicationContext, QuestionDetailActivity::class.java)
+              intent.putExtra("question", mQuestionArrayList[position])
+                startActivity(intent)}
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -218,23 +218,49 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else if (id == R.id.nav_compter) {
             toolbar.title = getString(R.string.menu_compter_label)
             mGenre = 4
+        } else if(id == R.id.nav_favorite_hobby) {
+            toolbar.title = getString(R.string.menu_favorite_hobby_label)
+            mGenre = 5
+        } else if(id == R.id.nav_favorite_life) {
+            toolbar.title = getString(R.string.menu_favorite_life_label)
+            mGenre = 6
+        } else if(id == R.id.nav_favorite_health) {
+            toolbar.title = getString(R.string.menu_favorite_health_label)
+            mGenre = 7
+        } else if(id == R.id.nav_favorite_computer) {
+            toolbar.title = getString(R.string.menu_favorite_computer_label)
+            mGenre = 8
         }
-
         drawer_layout.closeDrawer(GravityCompat.START)
-
         // --- ここから ---
         // 質問のリストをクリアしてから再度Adapterにセットし、AdapterをListViewにセットし直す
         mQuestionArrayList.clear()
         mAdapter.setQuestionArrayList(mQuestionArrayList)
         listView.adapter = mAdapter
-
         // 選択したジャンルにリスナーを登録する
         if (mGenreRef != null) {
             mGenreRef!!.removeEventListener(mEventListener)
         }
-        mGenreRef = mDatabaseReference.child(ContentsPATH).child(mGenre.toString())
-        mGenreRef!!.addChildEventListener(mEventListener)
-
+        if(mGenre <= 4) {
+            mGenreRef = mDatabaseReference.child(ContentsPATH).child(mGenre.toString())
+            mGenreRef!!.addChildEventListener(mEventListener)
+        }else if(mGenre == 5){
+            mGenreRef = mDatabaseReference.child(FavoritePATH).child("1")
+            Log.d("パス", "パス")
+            mGenreRef!!.addChildEventListener(mEventListener)
+        }else if(mGenre == 6){
+            mGenreRef = mDatabaseReference.child(FavoritePATH).child("2")
+            Log.d("パス", "パス")
+            mGenreRef!!.addChildEventListener(mEventListener)
+        }else if(mGenre == 7){
+            mGenreRef = mDatabaseReference.child(FavoritePATH).child("3")
+            Log.d("パス", "パス")
+            mGenreRef!!.addChildEventListener(mEventListener)
+        }else if(mGenre == 8){
+            mGenreRef = mDatabaseReference.child(FavoritePATH).child("4")
+            Log.d("パス", "パス")
+            mGenreRef!!.addChildEventListener(mEventListener)
+        }
         return true
         // --- ここまで追加する ---
     }

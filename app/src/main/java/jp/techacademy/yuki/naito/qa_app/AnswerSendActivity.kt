@@ -1,6 +1,7 @@
 package jp.techacademy.yuki.naito.qa_app
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -72,6 +73,8 @@ class AnswerSendActivity : AppCompatActivity(), View.OnClickListener, DatabaseRe
 
         progressBar.visibility = View.VISIBLE
         answerRef.push().setValue(data, this)
+        val intent = Intent(applicationContext, MainActivity::class.java)
+        startActivity(intent)
     }
 
 }

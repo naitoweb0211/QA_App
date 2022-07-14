@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.preference.PreferenceManager
@@ -159,7 +160,7 @@ class QuestionSendActivity : AppCompatActivity(), View.OnClickListener, Database
 
                 data["image"] = bitmapString
             }
-
+            Log.d("パス1", genreRef.toString())
             genreRef.push().setValue(data, this)
             progressBar.visibility = View.VISIBLE
         }

@@ -14,7 +14,16 @@
             android:id="@+id/nav_compter"
             android:title="@string/menu_compter_label"/>
         <item
-            android:id="@+id/nav_favorite"
-            android:title="@string/menu_favorite_label"/>
+            android:id="@+id/nav_favorite_hobby"
+            android:title="@string/menu_favorite_hobby_label"/>
+        <item
+            android:id="@+id/nav_favorite_life"
+            android:title="@string/menu_favorite_life_label"/>
+        <item
+            android:id="@+id/nav_favorite_health"
+            android:title="@string/menu_favorite_health_label"/>
+        <item
+            android:id="@+id/nav_favorite_computer"
+            android:title="@string/menu_favorite_computer_label"/>
     </group>
 </menu>
